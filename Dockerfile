@@ -22,6 +22,9 @@ RUN pecl install mongodb-1.2.9 \
 #set correct path to php 7.1
 RUN rm /usr/local/bin/php && ln -s /usr/bin/php7.1 /usr/local/bin/php
 
+#install php extensions
+RUN apt-get install -y php7.1-xml php7.1-gd php7.1-mbstring php7.1-curl php7.1-sqlite
+
 # Set correct entrypoint
 CMD ["/bin/bash"]
 ENTRYPOINT []
